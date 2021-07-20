@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-2:876983010549:task-definition/account-service-taskdef:1"
+        LoadBalancerInfo:
+          ContainerName: "account-service-container-"
+          ContainerPort: "8086"
+        PlatformVersion: "LATEST"
